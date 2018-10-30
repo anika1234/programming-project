@@ -1,0 +1,37 @@
+PImage speedometer;
+float x0;
+float y0;
+float kmh=100;
+void setup(){
+  size(800, 600);
+  speedometer=loadImage("speedometer.jpg");
+  x0=width/2;
+  y0=height/2;
+  kmh=0;
+}
+
+void draw(){
+  image(speedometer, 0, 0, width, height);
+  stroke(225, 0, 0);
+  strokeWeight(4);
+  if(keyPressed){
+    kmh++;
+  }else{
+    kmh--;
+  }
+  if (kmh>100){
+    kmh=0;
+  }
+  if (kmh>100){
+    kmh=100;
+  }
+ 
+  
+ 
+  float angle=radians((kmh *260/160)+140);
+  float xl=len*cos(angle)+x0;
+  float xl=len*sin(angle)+y0;
+  
+  line(x0, y0, 100, 100);
+  println("X"+mouseX+"Y"+mouseY);
+} 
