@@ -1,0 +1,39 @@
+void setup(){
+  size(600, 600);
+}
+
+void draw() {
+  background(0, 225, 0);
+  
+  rectMode(CENTER);
+  fill(0, 0, 0);
+  rect(300, 280, 400, 100);
+  
+  
+  textSize(50);
+  fill(0, 225, 0);
+  //textMode(CENTER);
+  String timeString = "";
+  if (hour() < 10) {
+    timeString += "0";
+  }
+  timeString += hour() + ":";
+  if (minute() < 10) {
+    timeString += "0";
+  }
+  timeString += minute() + ":";
+  if (second() < 10) {
+    timeString += "0";
+  }
+  timeString += second();
+  
+  text(timeString, 200, 300);
+ 
+ 
+ 
+  println(second());
+  println(minute());
+  println(hour());
+  println("----" + 5 + "----");
+
+}
