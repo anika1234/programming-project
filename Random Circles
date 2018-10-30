@@ -1,0 +1,22 @@
+int d = 30;
+
+void setup(){
+  size(800, 600);
+}
+void draw(){
+  for (int y = 50; y <= height; y += 50){
+    for (int x = 25; x <= width; x += 50){
+      fill(0, random(225), random(200));
+      ellipse(x, y, d, d);
+    }
+  }
+  
+  if (mouseButton == LEFT){
+    d++;
+  } else if (mouseButton == RIGHT){
+    d--;
+  }
+  if (d<0){
+    d=0;
+  }
+}
