@@ -1,0 +1,45 @@
+int r = 50;
+int x = 150;
+int y = 300;
+int xM = 100;
+int yM = 300;
+int rM = 40;
+int S = 2;
+
+void setup() {
+  size(700, 600);
+}
+
+void draw() {
+  background(0, 10, 155);
+  if(keyPressed){
+    if(keyCode == UP){
+      yM = yM - S;
+    } else if(keyCode == DOWN){
+      yM = yM + S;
+    } else if(keyCode == LEFT){
+      xM -= S;
+    } 
+    else if(keyCode == RIGHT){
+      xM += S;
+    }
+    if(yM < rM){
+      yM = rM;
+  }
+  
+  
+  if(xM > height - rM){
+    xM = height - rM;
+  }
+  if(dist(x, y, xM, yM) < (r + rM)){
+    x=(int) random(0, 700);
+    y=(int) random(0, 600);
+    rM=rM+10;
+  }
+
+  
+}
+  ellipse(xM, yM, 2*r, 2*r); 
+  ellipse(x, y, 2*r, 2*r);
+  fill(0, 0, 0); 
+}
