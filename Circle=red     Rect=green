@@ -1,0 +1,26 @@
+int x=200;
+int y=400;
+int w=50;
+int h=70;
+int x2=500;
+int y2=100;
+int r=50;
+void setup() {
+  size(700, 600);
+}
+
+void draw() {
+ boolean mouse = (mouseX>x) && (mouseX<x+w) && (mouseY>y) && (mouseY<y+h);
+ float d=dist(x2, y2, mouseX, mouseY);
+  if(mousePressed && mouse){
+    background(200, 4, 60);
+  }
+  if(mousePressed && d<r){
+    background(0, 225, 0);
+  }
+  rect(x, y, w, h);
+  ellipse(x2, y2, 2*r, 2*r);
+ }
+ 
+ 
+ 
