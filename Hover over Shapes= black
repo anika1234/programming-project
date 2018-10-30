@@ -1,0 +1,56 @@
+int x = 100;
+int y = 150;
+int r = 50; 
+
+int x1 = 300;
+int y1 = 150;
+int w1 = 200;
+int h1 = 50;
+void setup() {
+  size(700, 600);
+}
+
+void draw() {
+  ellipseMode(CENTER);
+  ellipse(x, y, r*2, r*2);
+  rectMode(CENTER);
+  rect(x1, y1, w1, h1);
+  float d = dist(x, y, mouseX, mouseY);
+  boolean isOverButton = (d<r);
+  boolean isOverButton1 = (mouseX < x1+w1/2) &&
+                          (mouseX > x1-w1/2) &&
+                          (mouseY < y1+h1/2) &&
+                          (mouseY > y1-h1/2);
+  
+  if (isOverButton || isOverButton1){
+    fill(0, 0, 0);
+  }
+    else {
+      fill(200, 50, 20);
+    }
+//  ellipse(100, 150, 100, 100);
+  
+//  boolean isOverButton = (mouseX > x) && 
+//                         (mouseX < (x+y)) && 
+//                         (mouseY > y) && 
+//                         (mouseY < (y+h));
+//  if (isOverButton){
+//    fill(225, 0, 0);
+//}  else  {
+//  fill(0, 225, 0);
+
+//   }
+   
+//    rect(200, 300, 200, 50);
+//  boolean isOverButton1 = (mouseX > x1) && 
+//                         (mouseX < (x1 + w1)) && 
+//                         (mouseY > y1) && 
+//                         (mouseY < (y1 + h1));
+//  if (isOverButton){
+//    fill(225, 0, 0);
+//}  else  {
+//  fill(0, 225, 0);
+//  }
+}
+
+ 
