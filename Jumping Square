@@ -1,0 +1,40 @@
+int birdX;
+int birdY;
+int birdW;
+int birdH;
+int fallVelocity = 1;
+int time = 0;
+float R, G, B;
+
+void setup() {
+  size(1000, 1000);
+  frameRate(24);
+  birdX = width * 1/4;
+  birdY = height * 1/4;
+  birdW = 100;   
+  birdH = 100;
+  background(0, 0, 0);
+}
+
+void draw() {
+  
+  background(R, G, B);
+  time += 1;
+  
+  rectMode(CENTER);
+  
+  rect(birdX, birdY, birdW, birdH);
+  birdY += fallVelocity;
+  fallVelocity += 1;
+  if (keyPressed) {
+    fallVelocity = -20;
+  }
+  
+  
+  if (time % (24 * 2) == 0) {
+    R = random(256);
+    G = random(256);
+    B = random(256);
+  }
+  
+}
